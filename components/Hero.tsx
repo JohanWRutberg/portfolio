@@ -3,6 +3,7 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -25,10 +26,26 @@ export default function Hero({}: Props) {
         alt="Picture of the author"
       />
       <div className="z-20 relative">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">Web developer</h2>
+        <motion.h2
+          initial={{
+            opacity: 0
+          }}
+          animate={{
+            scale: [1],
+            opacity: [0.2]
+          }}
+          transition={{
+            duration: 2.5
+          }}
+          className="text-sm uppercase text-[#00ff73] pb-2 tracking-[15px] animate-pulse"
+        >
+          Web developer
+        </motion.h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10">
-          <span className="mr-3">{text}</span>
-          <Cursor cursorColor="#00ff73" />
+          <span className="mr-3">
+            {text}
+            <Cursor cursorColor="#00ff73" />
+          </span>
         </h1>
         <div className="pt-5">
           <Link href="#about">

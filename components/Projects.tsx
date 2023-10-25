@@ -25,8 +25,8 @@ function Projects({}: Props) {
               viewport={{ once: true }}
               src="/img/trees-8050454_640.png"
               alt=""
-              width={400}
-              height={400}
+              width={300}
+              height={300}
             />
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
